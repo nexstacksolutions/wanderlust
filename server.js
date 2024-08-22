@@ -4,10 +4,10 @@ import { v2 as cloudinary } from "cloudinary";
 
 const port = process.env.PORT || 8080;
 
-async function startServer() {
+function startServer() {
   try {
     // Connect to the database
-    await connectDB();
+    connectDB();
     console.log("Database connected successfully");
 
     // Configure Cloudinary
