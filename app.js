@@ -10,15 +10,12 @@ import User from "./models/User.js";
 import ExpressError from "./classes/ExpressError.js";
 import ErrorMiddleware from "./middlewares/Error.js";
 import MongoStore from "connect-mongo";
-import { config } from "dotenv";
+import dotenv from "dotenv";
 import { listingRoutes } from "./routes/listings.js";
 import { reviewRoutes } from "./routes/reviews.js";
 import { userRoutes } from "./routes/users.js";
 
-config({
-  path: "./config/config.env",
-});
-
+dotenv.config();
 const app = express();
 
 app.engine("ejs", ejsMate);

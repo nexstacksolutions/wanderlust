@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "postinstall": "echo 'Dependencies installed!'"
+    "build": "echo 'Backend build step not necessary'",
+    "deploy:project": "pnpm deploy.sh"
   },
   "keywords": [],
   "author": "zeeshan asghar",

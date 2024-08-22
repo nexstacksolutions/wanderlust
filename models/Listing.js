@@ -12,7 +12,6 @@ const listingSchema = new Schema({
     public_id: {
       type: String,
       required: true,
-      // default: "664e365b0308932945000527a",
     },
 
     url: {
@@ -28,13 +27,11 @@ const listingSchema = new Schema({
       type: String,
       enum: ["Point"],
       required: true,
-      // default: "Point",
     },
 
     coordinates: {
       type: [Number],
       required: true,
-      // default: [74.314177, 31.565608],
     },
   },
 
@@ -53,7 +50,6 @@ const listingSchema = new Schema({
   owner: {
     type: Schema.Types.ObjectId,
     ref: "User",
-    // default: "66486d34d0ef230dac35c4ff",
   },
 });
 
