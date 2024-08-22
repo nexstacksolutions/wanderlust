@@ -26,10 +26,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 
-// // Index route
-// app.get("/", (req, res) => {
-//   res.send("Hi, I am root");
-// });
+// Index route
+app.get("/", (req, res) => {
+  res.send("Hi, I am root");
+});
 
 const ATLAS_URL = process.env.ATLAS_URL;
 const SECRET = process.env.SECRET;
@@ -80,11 +80,6 @@ app.use((req, res, next) => {
   res.locals.MsgError = req.flash("error");
   res.locals.currUser = req.user;
   next();
-});
-
-// Index route
-app.get("/", (req, res) => {
-  res.send("Hi, I am root");
 });
 
 // router routes
