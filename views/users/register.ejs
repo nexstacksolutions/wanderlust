@@ -1,0 +1,49 @@
+<% layout("/layouts/boilerPlate") %>
+
+<section class="register-user">
+  <div class="container">
+    <h1>SignUp on Wanderlust</h1>
+    <form class="needs-validation" action="/signup" method="post" novalidate>
+      <div class="username">
+        <label for="username">username</label>
+        <input
+          class="form-control"
+          type="text"
+          name="user[username]"
+          id="username"
+          placeholder="abc123"
+          required
+        />
+        <div class="invalid-feedback">provide a username</div>
+        <span class="material-symbols-outlined"> error </span>
+      </div>
+      <div class="email">
+        <label for="email">Email or phone</label>
+        <input
+          class="form-control"
+          type="email"
+          name="user[email]"
+          id="email"
+          placeholder="abc@gmail.com"
+          required
+        />
+        <div class="invalid-feedback">Enter an email or phone number</div>
+        <span class="material-symbols-outlined"> error </span>
+      </div>
+      <div class="password">
+        <label for="password">Password</label>
+        <input
+          class="form-control"
+          type="password"
+          name="user[password]"
+          id="password"
+          required
+        />
+        <div class="invalid-feedback">Enter a password</div>
+        <span class="material-symbols-outlined"> error </span>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</section>

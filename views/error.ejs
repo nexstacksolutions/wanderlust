@@ -1,0 +1,15 @@
+<% layout("/layouts/boilerPlate") %>
+
+<section class="error">
+  <div class="container">
+    <div class="section-image">
+      <img src="/Images/error.webp" alt="" />
+    </div>
+    <div class="section-content">
+      <h1><%= statusCode %></h1>
+      <h2>Oops! Page not found!</h2>
+      <p><%= message %></p>
+      <a class="btn" href="/listings">Back to Listings</a>
+    </div>
+  </div>
+</section>

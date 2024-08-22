@@ -1,0 +1,104 @@
+# ==============================
+# Logs
+# ==============================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==============================
+# Environment Variables
+# ==============================
+.env
+.env.local
+.env.*.local
+
+# ==============================
+# Node Modules
+# ==============================
+node_modules/
+
+# ==============================
+# Lockfiles
+# ==============================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# ==============================
+# IDE/Editor Configurations
+# ==============================
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.bak
+*.tmp
+*.sync
+*.log
+*.old
+*.orig
+*.autosave
+
+# ==============================
+# Operating System Files
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Sensitive Data
+# ==============================
+secrets.json
+api_keys.txt
+
+# ==============================
+# Database Files
+# ==============================
+database/schema.sql
+database/data.sql
+
+# ==============================
+# Temporary Files
+# ==============================
+*.tmp
+*.swp
+*.bak
+*.old
+*.swo
+
+# ==============================
+# Compiled Assets
+# ==============================
+/build/
+/dist/
+/coverage/
+
+# ==============================
+# Miscellaneous
+# ==============================
+*.pid
+*.seed
+*.gz
+*.zip
+*.tar
+*.rar
+
+# ==============================
+# Test and Coverage Reports
+# ==============================
+/coverage/
+/test-results/
+
+# ==============================
+# Additional Files
+# ==============================
+config/config.env

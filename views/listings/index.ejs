@@ -1,0 +1,162 @@
+<% layout("/layouts/boilerPlate") %>
+
+<section class="all-listing">
+  <div class="container">
+    <div class="section-header">
+      <div class="searchCards">
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <span>Amazing pools</span>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <span>Rooms</span>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <span>Amazing pools</span>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/ee9e2a40-ffac-4db9-9080-b351efc3cfc4.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <div><span>Tropical</span></div>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/5ed8f7c7-2e1f-43a8-9a39-4edfc81a3325.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <div><span>Bed & breakfasts</span></div>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <div><span>Design</span></div>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <div><span>Castles</span></div>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <div><span>Lakefront</span></div>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/ca25c7f3-0d1f-432b-9efa-b9f5dc6d8770.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <div><span>Camping</span></div>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/ee9e2a40-ffac-4db9-9080-b351efc3cfc4.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <div><span>Tropical</span></div>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/827c5623-d182-474a-823c-db3894490896.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <div><span>Ryokans</span></div>
+        </div>
+        <div class="card">
+          <img
+            src="https://a0.muscache.com/pictures/687a8682-68b3-4f21-8d71-3c3aef6c1110.jpg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <div><span>Boats</span></div>
+        </div>
+      </div>
+      <div id="gst-checkbox">
+        <p>Display Total after taxes</p>
+        <div class="toggleSwitchBtn"></div>
+      </div>
+    </div>
+    <div class="section-content">
+      <% allListings.forEach(listing => { %>
+      <div class="image-card">
+        <a href="/listings/<%= listing._id %>">
+          <div class="card-image">
+            <img src="<%= listing.image.url %>" alt="" />
+          </div>
+          <div class="card-content">
+            <h4><%= listing.title %></h4>
+            <p>
+              &#8377; <%= listing.price.toLocaleString("en-IN") %>/night &nbsp;
+              <span class="gst-taxes-info">+18%GST</span>
+            </p>
+          </div>
+        </a>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<script>
+  const gstBox = document.querySelector("#gst-checkbox");
+  const toggleBtn = gstBox.querySelector(".toggleSwitchBtn");
+
+  gstBox.addEventListener("click", function () {
+    toggleBtn.classList.toggle("active");
+    handleAddGST();
+  });
+
+  const handleAddGST = () => {
+    let gstTaxesInfo = document.querySelectorAll(".gst-taxes-info");
+
+    for (const gstInfo of gstTaxesInfo) {
+      if (toggleBtn.classList.contains("active")) {
+        gstInfo.style.display = "inline-block";
+      } else {
+        gstInfo.style.display = "none";
+      }
+    }
+  };
+</script>

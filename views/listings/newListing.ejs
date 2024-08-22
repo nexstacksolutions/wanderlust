@@ -1,0 +1,99 @@
+<% layout("/layouts/boilerPlate") %>
+
+<section class="add-listing">
+  <div class="container">
+    <h1>Add New Listing</h1>
+    <form
+      class="needs-validation"
+      action="/listings"
+      method="post"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <div class="title">
+        <label for="title">Title</label>
+        <input
+          class="form-control"
+          type="text"
+          name="listing[title]"
+          id="title"
+          placeholder="Add a catchy title"
+          required
+        />
+        <div class="invalid-feedback">Please provide title.</div>
+        <span class="material-symbols-outlined"> error </span>
+      </div>
+      <div class="description">
+        <label for="description">Description</label>
+        <textarea
+          class="form-control"
+          type="text"
+          name="listing[description]"
+          id="description"
+          rows="6"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please provide description.</div>
+        <span class="material-symbols-outlined"> error </span>
+      </div>
+      <div class="images">
+        <label for="images">Upload Image</label>
+        <input
+          class="form-control"
+          type="file"
+          name="listing[image]"
+          id="images"
+          required
+        />
+        <div class="invalid-feedback">Please add an listing image.</div>
+        <span class="material-symbols-outlined"> error </span>
+      </div>
+      <div class="price">
+        <label for="price">Price</label>
+        <input
+          class="form-control"
+          type="text"
+          name="listing[price]"
+          id="price"
+          placeholder="e.g: 1500"
+          required
+        />
+        <div class="invalid-feedback">Please provide listing price.</div>
+        <span class="material-symbols-outlined"> error </span>
+      </div>
+      <div class="country">
+        <label for="country">Country</label>
+        <input
+          class="form-control"
+          type="text"
+          name="listing[country]"
+          id="country"
+          placeholder="e.g: pakistan"
+          required
+        />
+        <div class="invalid-feedback">Please provide listing country.</div>
+        <span class="material-symbols-outlined"> error </span>
+      </div>
+      <div class="location">
+        <label for="location">Location</label>
+        <input
+          class="form-control"
+          type="text"
+          name="listing[location]"
+          id="location"
+          placeholder="e.g: lahore, punjab"
+          required
+        />
+        <div class="invalid-feedback">Please provide listing location.</div>
+        <span class="material-symbols-outlined"> error </span>
+      </div>
+
+      <button type="submit">Add Listing</button>
+    </form>
+    <button class="backBtn" aria-label="Go back to listings">
+      <span class="material-symbols-outlined"> chevron_left </span>
+      <a href="/listings">Back to listing</a>
+    </button>
+  </div>
+</section>
+<script src="/JS/validateForm.js"></script>

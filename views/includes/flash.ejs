@@ -1,0 +1,39 @@
+<% function displayFlashMessage(message, messageType) { %>
+<div class="flash-message <%= messageType %>">
+  <p><%= message %></p>
+  <span class="material-symbols-outlined removeFlashMsg"> close </span>
+</div>
+
+<script>
+  const flashMessage = document.querySelector(".flash-message");
+
+  flashMessage.addEventListener("click", (event) => {
+    if (event.target.classList.contains("removeFlashMsg")) {
+      flashMessage.style.animation = "slideOutRight 0.5s forwards";
+
+      setTimeout(() => {
+        flashMessage.remove();
+      }, 1000);
+    }
+  });
+
+  setTimeout(() => {
+    flashMessage.style.animation = "slideOutRight 0.5s forwards";
+
+    setTimeout(() => {
+      flashMessage.remove();
+    }, 1000);
+  }, 4000);
+</script>
+
+<% } %>
+
+<!-- <br /> -->
+
+<% if (MsgSuccess && MsgSuccess.length) { %> <% displayFlashMessage(MsgSuccess,
+"msgSuccess"); %> <% } %>
+
+<!-- <br /> -->
+
+<% if (MsgError && MsgError.length) { %> <% displayFlashMessage(MsgError,
+"msgError"); %> <% } %>

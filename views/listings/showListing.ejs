@@ -1,0 +1,56 @@
+<% layout("/layouts/boilerPlate") %>
+
+<script>
+  const mapToken = "<%= process.env.MAP_TOKEN %>";
+  const listing = `<%- JSON.stringify(listing) %>`;
+</script>
+
+<section class="show-listing">
+  <div class="container">
+    <div class="section-header">
+      <h1>Listing Details</h1>
+    </div>
+    <div class="image-box">
+      <img src="<%= listing.image.url%>" alt="" />
+    </div>
+    <div class="section-content">
+      <div class="content-box">
+        <p>Owned by <%= listing.owner.username %></p>
+        <h4><%= listing.title %></h4>
+        <p><%= listing.description %></p>
+        <p>&#8377; <%= listing.price.toLocaleString("en-IN") %>/night</p>
+        <p><%= listing.location %>, <%= listing.country %></p>
+      </div>
+
+      <% if (currUser && currUser._id.equals(listing.owner._id)) { %>
+      <div class="btns-box">
+        <button>
+          <a href="/listings/<%= listing._id %>/edit"> Edit </a>
+        </button>
+        <form
+          action="/listings/<%= listing._id %>?_method=DELETE"
+          method="post"
+          class="delForm"
+        >
+          <button>Delete</button>
+        </form>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <hr />
+</section>
+
+<!-- <br /> -->
+<% if (currUser) { %> <%- include("../includes/reviews/addReview.ejs", { listing
+}) %> <% } %>
+<!-- <br /> -->
+<% if (listing.reviews.length) { %> <%-
+include("../includes/reviews/showReview.ejs", { listing }) %> <% } %>
+<!-- <br /> -->
+<%- include("../includes/map.ejs") %>
+<!-- <br /> -->
+<script src="/JS/delForm.js"></script>
+<script src="/JS/validateForm.js"></script>
+<script src="/JS/reviewStars.js"></script>
+<script src="/JS/map.js"></script>
