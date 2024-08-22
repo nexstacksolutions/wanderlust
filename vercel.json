@@ -4,20 +4,10 @@
     {
       "src": "server.js",
       "use": "@vercel/node",
-      "static": ["public"],
-      "env": {
-        "NODE_ENV": "production",
-        "DATABASE_URL": "mongodb://your-mongodb-connection-string",
-        "API_KEY": "your-api-key"
-      }
+      "static": ["public"]
     }
   ],
   "routes": [
-    {
-      "src": "/",
-      "dest": "/server.js"
-    },
-
     {
       "src": "/(.*)",
       "dest": "/server.js"
