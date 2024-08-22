@@ -11,13 +11,5 @@
       "src": "/(.*)",
       "dest": "/server.js"
     }
-  ],
-  "env": {
-    "MONGO_URL": "@mongo_url",
-    "ATLAS_URL": "@atlas_url",
-    "SECRET": "@secret",
-    "CLOUD_NAME": "@cloud_name",
-    "CLOUD_API_KEY": "@cloud_api_key",
-    "CLOUD_API_SECRET": "@cloud_api_secret"
-  }
+  ]
 }
