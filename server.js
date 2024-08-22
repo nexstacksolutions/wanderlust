@@ -1,7 +1,6 @@
 import app from "./app.js";
 import connectDB from "./config/database.js";
 import { v2 as cloudinary } from "cloudinary";
-// import initializeDatabase from "./init/index.js";
 const port = process.env.PORT || 8080;
 
 // connect to Database
@@ -18,5 +17,3 @@ cloudinary.config({
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
-
-// initializeDatabase();
