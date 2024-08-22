@@ -2,7 +2,7 @@ import app from "./app.js";
 import connectDB from "./config/database.js";
 import { v2 as cloudinary } from "cloudinary";
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 connectDB();
 

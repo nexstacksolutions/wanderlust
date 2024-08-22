@@ -108,3 +108,4 @@ database/data.sql
 # Additional Files
 # ==============================
 config/config.env
+.vercel
