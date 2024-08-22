@@ -3,10 +3,21 @@
   "builds": [
     {
       "src": "server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "static": ["public"],
+      "env": {
+        "NODE_ENV": "production",
+        "DATABASE_URL": "mongodb://your-mongodb-connection-string",
+        "API_KEY": "your-api-key"
+      }
     }
   ],
   "routes": [
+    {
+      "src": "/",
+      "dest": "/server.js"
+    },
+
     {
       "src": "/(.*)",
       "dest": "/server.js"
