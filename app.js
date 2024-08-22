@@ -27,11 +27,10 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 
 // Index route
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hi, I am root");
 });
 
-const MONGO_URL = process.env.MONGO_URL;
 const ATLAS_URL = process.env.ATLAS_URL;
 const SECRET = process.env.SECRET;
 
